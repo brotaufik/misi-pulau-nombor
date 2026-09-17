@@ -43,7 +43,14 @@ dialog{background:var(--paper-grain),linear-gradient(var(--surface-high),var(--s
 @media(max-width:700px){.world-grid{grid-template-columns:1fr;gap:26px}.world-cover{aspect-ratio:1.75}.world-card-body{padding:22px}.world-card h2{font-size:1.65rem}.world-card p{min-height:0}.world-card-foot{font-size:.73rem}.journey-banner{flex-wrap:wrap;font-size:.75rem}.world-page-heading{gap:0}.world-page-heading h1{font-size:1.8rem}.world-page-heading p{font-size:.8rem}.level-tabs{width:100%;gap:8px}.level-tabs button{flex:1;padding:10px 8px;font-size:.78rem}.level-map{min-height:0!important;aspect-ratio:1.5}.level-map .map-pin>span{width:35px;height:35px;font-size:.85rem;border-width:2px}.explorer-note{flex-wrap:wrap;padding:20px;gap:15px}.explorer-note .buddy{width:58px;height:58px}.explorer-note>div{flex:1;min-width:170px}.explorer-note .secondary{width:100%}.activity{padding:14px;margin:18px 0}.piece-controls{grid-template-columns:repeat(4,1fr);gap:10px}.widget-stepper{gap:10px}.circle-controls{gap:8px}.circle-controls button{font-size:.72rem}.receipt{padding:18px}.game-top .chip{max-width:94px;font-size:.55rem}.game-top{gap:10px}.game-heading h1{font-size:1.1rem}.widget-readout{font-size:.84rem}.token-box{padding:7px;gap:8px}.token-box>div{padding:8px}.math-svg{max-height:260px}.world-card .primary{font-size:.95rem}.level-map .map-heading{top:5px;left:5px;right:5px}}
 @media(max-width:360px){.activity{padding:10px;border-width:2px}.activity #widget-preview{padding:5px}.coordinate-grid{padding-right:12px;grid-template-columns:15px repeat(6,minmax(0,1fr))}.grid-dot{min-height:30px;font-size:.9rem}.circle-controls button{font-size:.66rem}.tank-scene{gap:12px}.tank-vessel{width:88px}.activity-label{font-size:.47rem;letter-spacing:.8px}.widget-stepper>button{width:42px}.level-map .map-pin>span{width:31px;height:31px}.world-page-heading h1{font-size:1.65rem}.node-button{width:40px;min-height:40px}.receipt-row{font-size:.67rem;gap:10px}}
 @media(prefers-reduced-motion:reduce){.world-cover img,.tank-water{transition:none}}
-</style></head><body><div id="app"></div><dialog id="reference"><div class="dialog-head"><h2>Panduan penjelajah</h2><button class="icon-button" id="close-reference" aria-label="Tutup panduan">✕</button></div><div class="guide-banner"><div id="guide-buddy"></div><p>Setiap misi mempunyai 6 cabaran: Kenali → Latih → Gunakan. Baca soalan, cuba jawab dan buka petunjuk jika perlu. Tiada had masa.</p></div><h3>Tiga level, semua terbuka</h3><p>Cadangan perjalanan ialah Level 1 → 2 → 3. Kamu bebas memilih mana-mana misi. Setiap misi menyimpan sambungannya sendiri. Cuba pelaras, ketik grid atau sambung titik, kemudian tekan Semak jawapan.</p><h3>Rujukan pembelajaran</h3><p>Matematik Tahun 6 SK, KSSR (Semakan 2017), Part 1–3. Level 1: nombor dan operasi. Level 2: pecahan, perpuluhan, peratus, wang, masa dan ukuran. Level 3: ruang, koordinat, nisbah, data dan kebolehjadian. Nombor halaman merujuk halaman bercetak dalam PDF yang dibekalkan.</p><div id="reference-list"></div><p>Soalan permainan digubah berdasarkan kemahiran dalam buku. Bintang ialah ganjaran permainan, bukan rubrik rasmi atau Tahap Penguasaan (TP) PBD.</p><h3>Bagaimana bintang diberi?</h3><p>★ Tamat semua cabaran.<br>★★ Sekurang-kurangnya 3 jawapan betul pada cubaan pertama tanpa petunjuk.<br>★★★ Sekurang-kurangnya 5 jawapan betul pada cubaan pertama tanpa petunjuk.</p><p>Kemajuan disimpan pada pelayar dan peranti ini sahaja. Mengosongkan data pelayar akan memadamkannya.</p></dialog><script>/* Original questions aligned to the supplied textbook, printed pages 1–60. */
+/* An enamel sound switch remains available on every screen. */
+.sound-toggle{display:flex;align-items:center;justify-content:center;gap:7px;min-width:68px;min-height:46px;padding:7px 10px;border:1px solid #9e8b58;border-radius:15px;background:linear-gradient(#f2f2ce,#c6cca0);color:#3f5136;font-size:.56rem;font-weight:900;letter-spacing:.6px;box-shadow:inset 0 1px #ffffffe0,inset 0 -2px #687e4825,0 3px 0 #7e8850;flex-shrink:0}.sound-icon{font-size:1.15rem;line-height:1}.sound-label{display:flex;flex-direction:column;line-height:1.2;gap:2px}.sound-label b{font-size:.63rem;letter-spacing:.8px}.sound-toggle[aria-checked="false"]{background:linear-gradient(#eee3d3,#c5b7a6);border-color:#ac9577;color:#66533f;box-shadow:inset 0 1px #fff9,0 3px 0 #89765b}.sound-toggle:hover{filter:brightness(1.06)}.sound-toggle:active{transform:translateY(2px);box-shadow:0 1px 0 #7e8850}.sound-toggle:disabled{cursor:default;filter:none}
+[data-theme="dark"] .sound-toggle{background:linear-gradient(#526449,#354332);border-color:#8c9e71;color:#eef5dc;box-shadow:inset 0 1px #fff3,0 3px 0 #182318}[data-theme="dark"] .sound-toggle[aria-checked="false"]{background:linear-gradient(#4c4c50,#32343b);border-color:#7d7882;color:#e9e0d5;box-shadow:inset 0 1px #fff2,0 3px 0 #171d24}
+@media(max-width:850px){.header-tools{gap:8px}.sound-toggle{min-width:56px;padding:7px 8px;gap:4px;font-size:.5rem}}
+@media(max-width:460px){.header-inner{gap:9px}.header-tools{gap:5px}.sound-toggle{flex-direction:column;min-width:42px;min-height:44px;padding:5px 6px;gap:3px;border-radius:11px}.sound-icon{font-size:1rem}.sound-label{flex-direction:row;gap:3px;font-size:.38rem;letter-spacing:.2px}.sound-label b{font-size:.43rem;letter-spacing:.2px}.brand{font-size:.95rem;gap:5px}.brand-mark{width:29px}.brand small{font-size:.36rem;letter-spacing:.3px}.star-pill{padding:7px;gap:3px}.theme-toggle{padding:6px;gap:4px}}
+@media(max-width:350px){.brand{font-size:.83rem;gap:3px}.brand-mark{width:25px}.brand small{font-size:.3rem;max-width:110px;letter-spacing:.1px}.header-tools{gap:4px}.star-pill{font-size:.7rem;padding:6px}.sound-toggle{min-width:42px}.theme-toggle{padding:5px}.header-inner{padding:10px 8px}}
+@media(max-width:460px){.header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px 4px}.header-tools{margin-left:0}.nav{grid-column:1/-1}.brand{min-width:0}.brand small{white-space:normal}}
+</style></head><body><div id="app"></div><dialog id="reference"><div class="dialog-head"><h2>Panduan penjelajah</h2><button class="icon-button" id="close-reference" aria-label="Tutup panduan">✕</button></div><div class="guide-banner"><div id="guide-buddy"></div><p>Setiap misi mempunyai 6 cabaran: Kenali → Latih → Gunakan. Baca soalan, cuba jawab dan buka petunjuk jika perlu. Tiada had masa.</p></div><h3>Tiga level, semua terbuka</h3><p>Cadangan perjalanan ialah Level 1 → 2 → 3. Kamu bebas memilih mana-mana misi. Setiap misi menyimpan sambungannya sendiri. Cuba pelaras, ketik grid atau sambung titik, kemudian tekan Semak jawapan.</p><h3>Kesan bunyi</h3><p>Ketik butang 🔊 BUNYI untuk memilih ON atau OFF. Bunyi berbeza mengiringi pilihan, aktiviti, petunjuk, jawapan dan kejayaan misi. Bunyi bermula selepas kamu berinteraksi. Pilihan bunyi disimpan pada pelayar ini.</p><h3>Rujukan pembelajaran</h3><p>Matematik Tahun 6 SK, KSSR (Semakan 2017), Part 1–3. Level 1: nombor dan operasi. Level 2: pecahan, perpuluhan, peratus, wang, masa dan ukuran. Level 3: ruang, koordinat, nisbah, data dan kebolehjadian. Nombor halaman merujuk halaman bercetak dalam PDF yang dibekalkan.</p><div id="reference-list"></div><p>Soalan permainan digubah berdasarkan kemahiran dalam buku. Bintang ialah ganjaran permainan, bukan rubrik rasmi atau Tahap Penguasaan (TP) PBD.</p><h3>Bagaimana bintang diberi?</h3><p>★ Tamat semua cabaran.<br>★★ Sekurang-kurangnya 3 jawapan betul pada cubaan pertama tanpa petunjuk.<br>★★★ Sekurang-kurangnya 5 jawapan betul pada cubaan pertama tanpa petunjuk.</p><p>Kemajuan disimpan pada pelayar dan peranti ini sahaja. Mengosongkan data pelayar akan memadamkannya.</p></dialog><script>/* Original questions aligned to the supplied textbook, printed pages 1–60. */
 const MISSIONS = [
 {id:'kod',name:'Pintu Kod Rahsia',skill:'Baca nombor & nilai tempat',icon:'▦',pages:'1–3',tint:'#e5f0de',story:'Pintu pulau terkunci. Baca nombor dengan teliti untuk mengaktifkan kod masuk.'},
 {id:'pola',name:'Jambatan Terputus',skill:'Pola nombor',icon:'↗',pages:'4–8',tint:'#e2eff9',story:'Sambungkan laluan jambatan dengan mengenal pasti perubahan antara nombor.'},
@@ -116,6 +123,208 @@ MISSIONS.push(...NEW_MISSIONS);
 Object.assign(BANK,NEW_BANK);
 
 'use strict';
+
+// Original, short synthesized effects. No downloads, music, or audio on page load.
+const GameSound = (() => {
+  const STORAGE_KEY = 'pulau-nombor-sound';
+  const host = typeof window !== 'undefined' ? window : globalThis;
+  const AudioCtor = host.AudioContext || host.webkitAudioContext;
+  const MAX_VOICES = 12;
+  const voices = new Set();
+  const lastPlayed = new Map();
+  const movement = new Set(['fraction', 'tank', 'clock', 'angle', 'polygon', 'grid', 'circle', 'ratio', 'counter', 'meter', 'pie', 'radius']);
+  const foreground = new Set(['level', 'mission', 'correct', 'retry', 'empty', 'hint', 'solution', 'next', 'finish', 'reset']);
+  const spacing = { tap: 55, select: 65, level: 220, mission: 180, correct: 180, retry: 240, empty: 280, hint: 200, solution: 200, next: 90, finish: 500, reset: 140 };
+  let enabled = true;
+  let context = null;
+  let master = null;
+  let broken = false;
+  let pageHidden = false;
+  let pending = null;
+  let resuming = false;
+  let epoch = 0;
+
+  try { enabled = localStorage.getItem(STORAGE_KEY) !== 'off'; } catch {}
+
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, Number(value) || 0));
+  const now = () => typeof performance !== 'undefined' && typeof performance.now === 'function' ? performance.now() : Date.now();
+  const hidden = () => pageHidden || (typeof document !== 'undefined' && (document.hidden || document.visibilityState === 'hidden'));
+  const tone = (frequency, at = 0, duration = .12, type = 'sine', volume = .24, end = frequency) => ({ frequency, at, duration, type, volume, end });
+
+  function pattern(name, options) {
+    const level = Math.round(clamp(options.level || 1, 1, 3));
+    const base = [523.25, 587.33, 659.25][level - 1];
+    const value = clamp(options.value, 0, 360);
+    switch (name) {
+      case 'tap': return [tone(420, 0, .055, 'triangle', .19, 330)];
+      case 'select': return [tone(620, 0, .075, 'sine', .22, 760)];
+      case 'level':
+        if (level === 1) return [tone(base, 0, .19, 'triangle'), tone(base * 1.25, .1, .2, 'triangle'), tone(base * 1.5, .2, .28, 'sine')];
+        if (level === 2) return [tone(base, 0, .11, 'triangle'), tone(base * 1.5, .13, .12, 'triangle'), tone(base * 1.25, .26, .12, 'triangle'), tone(base * 2, .39, .24, 'sine')];
+        return [tone(base * .75, 0, .21, 'sine', .2, base), tone(base * 1.5, .15, .27, 'sine', .17, base * 2), tone(base * 2.5, .32, .32, 'sine', .13)];
+      case 'mission': return [tone(base * .75, 0, .13, level === 2 ? 'triangle' : 'sine', .22), tone(base, .1, .16, 'triangle', .24), tone(base * (level === 3 ? 2 : 1.5), .22, .23, 'sine', .2)];
+      case 'correct': return [tone(660, 0, .15), tone(830, .08, .17), tone(990, .16, .23), tone(1320, .26, .3, 'sine', .16)];
+      case 'retry': return [tone(392, 0, .18, 'triangle', .19), tone(440, .15, .22, 'sine', .2)];
+      case 'empty': return [tone(440, 0, .08, 'sine', .17), tone(440, .15, .12, 'sine', .15)];
+      case 'hint': return [tone(740, 0, .21, 'sine', .21), tone(1110, .11, .3, 'sine', .12)];
+      case 'solution': return [tone(523.25, 0, .17, 'triangle', .17), tone(659.25, .14, .2, 'triangle', .17), tone(783.99, .28, .28, 'sine', .18)];
+      case 'next': return [tone(540, 0, .07, 'triangle', .2), tone(810, .07, .12, 'sine', .18)];
+      case 'finish': {
+        const stars = Math.round(clamp(options.stars || 1, 1, 3));
+        const notes = [1, 1.25, 1.5, 2, 1.5, 2, 2.5].slice(0, stars + 3);
+        const result = notes.map((ratio, i) => tone(base * ratio, i * .12, .21, level === 2 ? 'triangle' : 'sine', .2));
+        const at = notes.length * .12;
+        result.push(tone(base, at, .42, 'triangle', .17), tone(base * 1.25, at, .42, 'sine', .14), tone(base * 2, at, .45, 'sine', .13));
+        return result;
+      }
+      case 'fraction': return [tone(760 + value * 24, 0, .09, 'triangle', .23, 480 + value * 12)];
+      case 'tank': return [tone(260, 0, .1, 'sine', .21, 560), tone(390, .06, .09, 'sine', .16, 850)];
+      case 'clock': return [tone(620, 0, .035, 'triangle', .22, 410), tone(1700, 0, .012, 'sine', .055)];
+      case 'angle': return [tone(550 + value * 2, 0, .17, 'sine', .19)];
+      case 'polygon': return [tone(310 + value * 18, 0, .055, 'triangle', .26, 230)];
+      case 'grid': return [tone(460 + value * 6, 0, .11, 'sine', .2, 1050)];
+      case 'circle': return [tone(784, 0, .25, 'sine', .17), tone(1575, .008, .14, 'sine', .065)];
+      case 'ratio': return [tone(392, 0, .09, 'triangle', .2), tone(588, .045, .12, 'triangle', .17)];
+      case 'counter': return [tone(380 + (value % 12) * 24, 0, .065, 'triangle', .2, 330)];
+      case 'meter': return [tone(340 + value * 1.5, 0, .075, 'sine', .18, 450 + value * 1.5)];
+      case 'pie': return [tone(660 + value, 0, .13, 'triangle', .17), tone(990 + value, .025, .11, 'sine', .085)];
+      case 'radius': return [tone(360 + value * 35, 0, .15, 'sine', .18, 600 + value * 35)];
+      case 'reset': return [tone(600, 0, .09, 'triangle', .17), tone(450, .07, .12, 'triangle', .15)];
+      default: return null;
+    }
+  }
+
+  function removeVoice(voice) {
+    voices.delete(voice);
+    try { voice.oscillator.onended = null; voice.oscillator.disconnect(); } catch {}
+    try { voice.gain.disconnect(); } catch {}
+  }
+
+  function cancelVoice(voice) {
+    try { voice.oscillator.stop(); } catch {}
+    removeVoice(voice);
+  }
+
+  function clearVoices() {
+    for (const voice of [...voices]) cancelVoice(voice);
+  }
+
+  function stop() {
+    epoch += 1;
+    pending = null;
+    lastPlayed.clear();
+    try {
+      if (master && context) {
+        master.gain.cancelScheduledValues(context.currentTime);
+        master.gain.setValueAtTime(0, context.currentTime);
+      }
+    } catch {}
+    clearVoices();
+  }
+
+  function emit(request) {
+    if (!enabled || hidden() || request.epoch !== epoch || !context || context.state !== 'running') return;
+    if (foreground.has(request.name)) clearVoices();
+    master.gain.cancelScheduledValues(context.currentTime);
+    master.gain.setValueAtTime(.26, context.currentTime);
+    const start = context.currentTime + .005;
+    for (const note of request.notes) {
+      while (voices.size >= MAX_VOICES) cancelVoice(voices.values().next().value);
+      let oscillator;
+      let gain;
+      let voice;
+      try {
+        oscillator = context.createOscillator();
+        gain = context.createGain();
+        voice = { oscillator, gain };
+        oscillator.type = note.type;
+        const begin = start + note.at;
+        const end = begin + note.duration;
+        oscillator.frequency.setValueAtTime(note.frequency, begin);
+        if (note.end !== note.frequency) oscillator.frequency.exponentialRampToValueAtTime(note.end, end);
+        gain.gain.setValueAtTime(0, begin);
+        gain.gain.linearRampToValueAtTime(note.volume, begin + Math.min(.008, note.duration / 4));
+        gain.gain.exponentialRampToValueAtTime(.0001, end);
+        oscillator.connect(gain);
+        gain.connect(master);
+        oscillator.onended = () => removeVoice(voice);
+        voices.add(voice);
+        oscillator.start(begin);
+        oscillator.stop(end + .006);
+      } catch {
+        if (voice) cancelVoice(voice);
+        else {
+          try { oscillator?.disconnect(); } catch {}
+          try { gain?.disconnect(); } catch {}
+        }
+      }
+    }
+  }
+
+  function play(name, options = {}) {
+    try {
+      if (!enabled || hidden() || broken || typeof AudioCtor !== 'function') return false;
+      const notes = pattern(name, options || {});
+      if (!notes) return false;
+      const time = now();
+      const key = movement.has(name) ? 'movement' : name;
+      const interval = movement.has(name) ? (name === 'tank' ? 110 : 75) : (spacing[name] || 75);
+      if (lastPlayed.has(key) && time - lastPlayed.get(key) < interval) return false;
+      lastPlayed.set(key, time);
+      if (!context) {
+        // play() and toggle() are called by user-input handlers; creation stays lazy.
+        context = new AudioCtor();
+        master = context.createGain();
+        master.gain.setValueAtTime(0, context.currentTime);
+        master.connect(context.destination);
+      }
+      if (context.state === 'closed') { broken = true; stop(); return false; }
+      const request = { name, notes, epoch };
+      if (context.state === 'running') { emit(request); return true; }
+      pending = request; // Only the latest gesture survives an interrupted audio context.
+      if (!resuming) {
+        resuming = true;
+        let resumed;
+        try { resumed = context.resume(); } catch { resuming = false; pending = null; return false; }
+        Promise.resolve(resumed).then(() => {
+          resuming = false;
+          const latest = pending;
+          pending = null;
+          if (latest) {
+            try { emit(latest); } catch { stop(); }
+          }
+        }, () => { resuming = false; pending = null; stop(); });
+      }
+      return true;
+    } catch {
+      if (!context || !master) broken = true;
+      stop();
+      return false;
+    }
+  }
+
+  function toggle() {
+    enabled = !enabled;
+    try { localStorage.setItem(STORAGE_KEY, enabled ? 'on' : 'off'); } catch {}
+    stop();
+    if (enabled) play('select');
+    return enabled;
+  }
+
+  try {
+    if (typeof document !== 'undefined') document.addEventListener?.('visibilitychange', () => { if (hidden()) stop(); });
+    host.addEventListener?.('pagehide', () => { pageHidden = true; stop(); });
+    host.addEventListener?.('pageshow', () => { pageHidden = false; });
+  } catch {}
+
+  return Object.freeze({
+    get enabled() { return enabled; },
+    get supported() { return typeof AudioCtor === 'function' && !broken; },
+    toggle, play, stop
+  });
+})();
+
+'use strict';
 const polar=(cx,cy,r,a)=>[cx+r*Math.cos(a*Math.PI/180),cy+r*Math.sin(a*Math.PI/180)];
 const point=(p)=>p.map(n=>Number(n.toFixed(3))).join(',');
 function svgStage(body,title,box='0 0 300 240'){return `<svg class="math-svg" viewBox="${box}" role="img" aria-label="${esc(title)}">${body}</svg>`;}
@@ -135,8 +344,8 @@ function pathLabel(path){return path?.length?path.map(i=>String.fromCharCode(65+
 function widgetReadout(q){const w=q.widget,v=run.value;if(v===null||v===undefined)return 'Cuba alat di atas untuk memilih jawapan';switch(w.kind){case'fraction':return `${v} daripada ${w.den} keping dipilih`;case'polygon':return pathLabel(run.path);case'grid':return `Destinasi: (${String(v).replace(',',', ')})`;case'clock':return `Waktu 24 jam: ${timeLabel(v)}`;case'circle':return {pusat:'Titik O',jejari:'Garisan biru',diameter:'Garisan merah',lilitan:'Garis tepi'}[v];default:return `${v} ${w.unit||''}`;}}
 function widgetHTML(q){const w=q.widget,v=run.value??0,disabled=run.solved?'disabled':'';let controls='';if(w.kind==='fraction'){controls=`<div class="piece-controls" role="group" aria-label="Pilih kepingan piza">${Array.from({length:w.den},(_,i)=>`<button type="button" data-piece="${i}" class="piece-button ${(run.pieces||[]).includes(i)?'selected':''}" aria-label="Kepingan ${i+1}" aria-pressed="${(run.pieces||[]).includes(i)}" ${disabled}>${i+1}</button>`).join('')}</div><p class="widget-note">Ketik nombor kepingan. Ketik semula untuk membuang pilihan.</p>`;}else if(w.kind==='polygon'){controls=`<button class="secondary compact-button" type="button" data-widget-reset ${disabled}>↶ Padam garisan</button><p class="widget-note">Mula di A, sambungkan titik jiran dan kembali ke A.</p>`;}else if(w.kind==='circle'){controls=`<div class="circle-controls">${[['pusat','● Titik O'],['jejari','／ Garisan biru'],['diameter','— Garisan merah'],['lilitan','◯ Garis tepi']].map(([id,t])=>`<button type="button" data-circle="${id}" aria-pressed="${run.value===id}" class="${run.value===id?'selected':''}" ${disabled}>${t}</button>`).join('')}</div>`;}else if(w.kind==='clock'){controls=`<div class="clock-controls"><label>Jam<select data-clock="hour" ${disabled}>${Array.from({length:24},(_,i)=>`<option value="${i}" ${Math.floor(v/60)===i?'selected':''}>${String(i).padStart(2,'0')}</option>`).join('')}</select></label><span>:</span><label>Minit<select data-clock="minute" ${disabled}>${Array.from({length:12},(_,i)=>`<option value="${i*5}" ${v%60===i*5?'selected':''}>${String(i*5).padStart(2,'0')}</option>`).join('')}</select></label></div><p class="widget-note">Gunakan waktu 24 jam. 15:00 bersamaan 3 petang.</p>`;}else if(w.kind!=='grid'){controls=`<div class="widget-stepper"><button type="button" data-step="-1" aria-label="Kurangkan ${w.step||1} ${esc(w.unit||'')}" ${disabled}>−</button><label class="slider-label"><span>${w.kind==='radius'?'Laraskan jejari':'Laraskan nilai'}</span><input type="range" data-widget-range aria-label="${w.kind==='radius'?'Jejari':'Nilai jawapan'}" min="0" max="${w.max}" step="${w.step||1}" value="${v}" ${disabled}></label><button type="button" data-step="1" aria-label="Tambahkan ${w.step||1} ${esc(w.unit||'')}" ${disabled}>+</button></div><p class="widget-note">Seret pelaras atau guna − / + (${w.step||1} ${esc(w.unit||'')} setiap langkah).</p>`;}return `<section class="activity activity-${w.kind}" aria-label="Aktiviti interaktif"><div class="activity-label">✦ MAKMAL EXPLORER · CUBA SENDIRI</div><div id="widget-preview">${widgetPreview(q)}</div>${controls}<output id="widget-readout" class="widget-readout" aria-live="polite">${esc(widgetReadout(q))}</output></section>`;}
 function updateWidget(q,controls=false){el('widget-preview').innerHTML=widgetPreview(q);el('widget-readout').textContent=widgetReadout(q);const slider=document.querySelector('[data-widget-range]');if(slider)slider.value=run.value??0;if(controls){document.querySelectorAll('[data-piece]').forEach(b=>{const active=(run.pieces||[]).includes(Number(b.dataset.piece));b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});document.querySelectorAll('[data-circle]').forEach(b=>{const active=run.value===b.dataset.circle;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});}persist();}
-function widgetClick(b){if(!run||run.solved)return false;const q=BANK[run.id][run.index],w=q.widget;if(!w)return false;let handled=true;if(b.dataset.piece!==undefined){const n=Number(b.dataset.piece);run.pieces=(run.pieces||[]).includes(n)?run.pieces.filter(i=>i!==n):[...(run.pieces||[]),n];run.value=run.pieces.length;}else if(b.dataset.step){run.value=Number(Math.max(0,Math.min(w.max,(run.value||0)+Number(b.dataset.step)*(w.step||1))).toFixed(6));}else if(b.dataset.point!==undefined){if((run.path||[]).length>=w.sides+1){run.path=[];}run.path=[...(run.path||[]),Number(b.dataset.point)];run.value=run.path.join(',');}else if(b.hasAttribute('data-widget-reset')){run.path=[];run.value=null;}else if(b.dataset.grid!==undefined){run.value=b.dataset.grid;}else if(b.dataset.circle){run.value=b.dataset.circle;}else handled=false;if(handled)updateWidget(q,true);return handled;}
-function widgetInput(target){if(!run||run.solved)return false;const q=BANK[run.id][run.index];if(!q.widget)return false;if(target.hasAttribute('data-widget-range'))run.value=Number(target.value);else if(target.dataset.clock){const h=document.querySelector('[data-clock="hour"]'),m=document.querySelector('[data-clock="minute"]');run.value=Number(h.value)*60+Number(m.value);}else return false;updateWidget(q);return true;}
+function widgetClick(b){if(!run||run.solved)return false;const q=BANK[run.id][run.index],w=q.widget;if(!w)return false;const previous=run.value;let handled=true;if(b.dataset.piece!==undefined){const n=Number(b.dataset.piece);run.pieces=(run.pieces||[]).includes(n)?run.pieces.filter(i=>i!==n):[...(run.pieces||[]),n];run.value=run.pieces.length;}else if(b.dataset.step){run.value=Number(Math.max(0,Math.min(w.max,(run.value||0)+Number(b.dataset.step)*(w.step||1))).toFixed(6));}else if(b.dataset.point!==undefined){if((run.path||[]).length>=w.sides+1){run.path=[];}run.path=[...(run.path||[]),Number(b.dataset.point)];run.value=run.path.join(',');}else if(b.hasAttribute('data-widget-reset')){run.path=[];run.value=null;}else if(b.dataset.grid!==undefined){run.value=b.dataset.grid;}else if(b.dataset.circle){run.value=b.dataset.circle;}else handled=false;if(handled){if(previous!==run.value)GameSound.play(b.hasAttribute('data-widget-reset')?'reset':w.kind,{level:activeLevel,value:typeof run.value==='number'?run.value:0});updateWidget(q,true);}return handled;}
+function widgetInput(target){if(!run||run.solved)return false;const q=BANK[run.id][run.index];if(!q.widget)return false;const previous=run.value;if(target.hasAttribute('data-widget-range'))run.value=Number(target.value);else if(target.dataset.clock){const h=document.querySelector('[data-clock="hour"]'),m=document.querySelector('[data-clock="minute"]');run.value=Number(h.value)*60+Number(m.value);}else return false;if(previous!==run.value)GameSound.play(q.widget.kind,{level:activeLevel,value:run.value});updateWidget(q);return true;}
 function revealWidget(q){if(!q.widget)return;run.value=q.answer;if(q.widget.kind==='fraction')run.pieces=Array.from({length:q.answer},(_,i)=>i);if(q.widget.kind==='polygon')run.path=q.answer.split(',').map(Number);}
 
 'use strict';
@@ -145,6 +354,8 @@ function currentTheme(){return document.documentElement.dataset.theme==='dark'?'
 function themeSwitch(){const dark=currentTheme()==='dark';return `<button type="button" id="theme-toggle" class="theme-toggle" data-action="theme" role="switch" aria-label="Mod gelap" aria-checked="${dark}"><span class="toggle-track" aria-hidden="true"><span class="toggle-knob">${dark?'☾':'☀'}</span></span><span class="toggle-label">${dark?'DARK':'LIGHT'}</span></button>`;}
 function syncThemeColor(){const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',currentTheme()==='dark'?'#191f26':'#c4915c');}
 function toggleTheme(){const mode=currentTheme()==='dark'?'light':'dark';document.documentElement.dataset.theme=mode;try{localStorage.setItem(THEME_KEY,mode);}catch{}const button=el('theme-toggle');button.setAttribute('aria-checked',String(mode==='dark'));button.querySelector('.toggle-knob').textContent=mode==='dark'?'☾':'☀';button.querySelector('.toggle-label').textContent=mode.toUpperCase();syncThemeColor();}
+function soundSwitch(){const on=GameSound.enabled&&GameSound.supported;return `<button type="button" id="sound-toggle" class="sound-toggle" data-action="sound" role="switch" aria-label="Kesan bunyi" aria-checked="${on}" title="${GameSound.supported?(on?'Matikan kesan bunyi':'Hidupkan kesan bunyi'):'Bunyi tidak disokong oleh pelayar ini'}" ${GameSound.supported?'':'disabled'}><span class="sound-icon" aria-hidden="true">${on?'🔊':'🔇'}</span><span class="sound-label">BUNYI <b>${on?'ON':'OFF'}</b></span></button>`;}
+function toggleSound(){GameSound.toggle();const button=el('sound-toggle'),on=GameSound.enabled;button.setAttribute('aria-checked',String(on));button.setAttribute('title',on?'Matikan kesan bunyi':'Hidupkan kesan bunyi');button.querySelector('.sound-icon').textContent=on?'🔊':'🔇';button.querySelector('.sound-label b').textContent=on?'ON':'OFF';}
 const KEY='pulau-nombor-t6-v1';
 let storageOK=true;let saved={results:{},run:null};
 try{const value=JSON.parse(localStorage.getItem(KEY)||'null');if(value&&value.results&&typeof value.results==='object'){saved=value;if(saved.run&&(!BANK[saved.run.id]||!Number.isInteger(saved.run.index)||saved.run.index<0||saved.run.index>6||!Array.isArray(saved.run.records)))saved.run=null;}}catch{storageOK=false;}
@@ -178,7 +389,7 @@ function steps(){return `<div class="step-trail" aria-hidden="true">${Array.from
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch{storageOK=false;}}
 function totalStars(){return MISSIONS.reduce((n,m)=>n+(saved.results[m.id]?.stars||0),0);}
 function completed(){return MISSIONS.filter(m=>saved.results[m.id]).length;}
-function header(){return `<header><div class="header-inner"><button class="brand" data-action="home" aria-label="Kembali ke peta"><span class="brand-mark">${buddy()}</span><span>Pulau <b>Nombor</b><small>PENGEMBARAAN MATEMATIK TAHUN 6</small></span></button><nav class="nav" aria-label="Navigasi utama"><button data-action="home" class="${screen==='home'||screen==='world'?'active':''}" aria-label="Peta dunia"><span aria-hidden="true">🏝️</span> Peta dunia</button><button data-action="progress" class="${screen==='progress'?'active':''}" aria-label="Kemajuan"><span aria-hidden="true">🏆</span> Kemajuan</button><button data-action="help" aria-label="Panduan"><span aria-hidden="true">💡</span> Panduan</button></nav><div class="header-tools">${themeSwitch()}<div class="star-pill" aria-label="${totalStars()} daripada ${MAX_STARS} bintang"><span aria-hidden="true">★</span> ${totalStars()}<small>/ ${MAX_STARS}</small></div></div></div></header>`;}
+function header(){return `<header><div class="header-inner"><button class="brand" data-action="home" aria-label="Kembali ke peta"><span class="brand-mark">${buddy()}</span><span>Pulau <b>Nombor</b><small>PENGEMBARAAN MATEMATIK TAHUN 6</small></span></button><nav class="nav" aria-label="Navigasi utama"><button data-action="home" class="${screen==='home'||screen==='world'?'active':''}" aria-label="Peta dunia"><span aria-hidden="true">🏝️</span> Peta dunia</button><button data-action="progress" class="${screen==='progress'?'active':''}" aria-label="Kemajuan"><span aria-hidden="true">🏆</span> Kemajuan</button><button data-action="help" aria-label="Panduan"><span aria-hidden="true">💡</span> Panduan</button></nav><div class="header-tools">${soundSwitch()}${themeSwitch()}<div class="star-pill" aria-label="${totalStars()} daripada ${MAX_STARS} bintang"><span aria-hidden="true">★</span> ${totalStars()}<small>/ ${MAX_STARS}</small></div></div></div></header>`;}
 function warning(){return storageOK?'':'<div class="storage-warning" role="status">Pelayar ini tidak dapat menyimpan kemajuan. Kamu masih boleh bermain, tetapi kemajuan mungkin hilang apabila halaman ditutup.</div>';}
 function cards(list=levelMissions(activeLevel)){return `<div class="mission-grid">${list.map((m,i)=>{const r=saved.results[m.id];return `<button class="mission-card ${r?'earned':''}" data-start="${m.id}" style="${theme(m)}"><div class="card-scene"><span class="mission-index">MISI ${String(i+1).padStart(2,'0')}</span><span class="scene-spark spark-one" aria-hidden="true">✦</span><span class="scene-spark spark-two" aria-hidden="true">+</span>${art(m.id)}<span class="card-stars" aria-label="${r?.stars||0} bintang">${r?'★'.repeat(r.stars)+'☆'.repeat(3-r.stars):'☆☆☆'}</span></div><div class="card-copy"><h3>${m.name}</h3><p>${m.skill}</p><div class="card-bottom"><span>${r?'✓ Misi selesai':'6 cabaran seronok'}</span><span class="explore">${saved.runs[m.id]?'Sambung':r?'Main lagi':'Teroka'} <b aria-hidden="true">→</b></span></div></div></button>`;}).join('')}</div>`;}
 function levelTabs(){return `<div class="level-tabs" role="group" aria-label="Pilih level">${LEVELS.map(l=>`<button data-level="${l.id}" aria-pressed="${activeLevel===l.id}" class="${activeLevel===l.id?'active':''}">${l.icon} <span>Level ${l.id}</span></button>`).join('')}</div>`;}
@@ -186,22 +397,22 @@ function home(){screen='home';run=null;message=null;el('app').innerHTML=header()
 function world(id=activeLevel){activeLevel=Number(id);const l=levelInfo(activeLevel),list=levelMissions(l.id);screen='world';run=null;message=null;const ongoing=Object.values(saved.runs).find(r=>list.some(m=>m.id===r.id)),m=ongoing?list.find(m=>m.id===ongoing.id):list.find(m=>!saved.results[m.id])||list[0];const positions={1:[[23,30],[49,37],[69,25],[84,58],[28,62],[67,77]],2:[[15,35],[38,33],[62,35],[85,42],[15,76],[43,82],[69,69],[86,84]],3:[[15,32],[50,31],[84,33],[50,56],[17,72],[84,72],[50,87]]};el('app').innerHTML=header()+`<main class="shell">${warning()}<div class="world-page-heading"><div><div class="eyebrow">LEVEL ${l.id} · ${list.length} MISI TERBUKA</div><h1>${l.icon} ${l.name}</h1><p>${l.summary}</p></div>${levelTabs()}</div><div class="main-grid"><section class="island-panel level-map" aria-label="Peta ${l.name}"><img class="island-image" src="${l.image}" alt="Peta bergambar ${l.name}. Pilih nombor misi atau kad di bawah." width="1536" height="1024"><div class="map-heading"><span class="map-label">${l.icon} PETA LEVEL ${l.id}</span><span class="map-tag">${levelDone(l.id)} / ${list.length} diterokai</span></div><div class="map-pins">${list.map((x,i)=>`<button class="map-pin ${saved.results[x.id]?'visited':''}" data-start="${x.id}" style="${theme(x)};left:${positions[l.id][i][0]}%;top:${positions[l.id][i][1]}%" aria-label="Misi ${i+1}: ${x.name}"><span>${saved.results[x.id]?'✓':i+1}</span><small>${x.name}</small></button>`).join('')}</div></section><section class="start-panel" style="${theme(m)}"><div class="eyebrow">${ongoing?'SAMBUNG PENGEMBARAAN':'MISI PILIHAN UNTUKMU'}</div><div class="start-art">${art(m.id)}</div><div class="start-copy"><span class="world-label">Misi ${list.indexOf(m)+1} daripada ${list.length}</span><h2>${m.name}</h2><p>${m.story}</p></div><div class="meta"><span>✦ ${ongoing?`Cabaran ${ongoing.index+1} / 6`:'6 cabaran'}</span><span>◷ Tanpa had masa</span></div><button class="primary" data-start="${m.id}">${ongoing?'Sambung misi':'Mulakan misi'} →</button></section></div><div class="section-title"><div><div class="eyebrow">PILIH PENGEMBARAAN KAMU</div><h2>Misi ${l.name}</h2></div><span class="chip">★ ${levelStars(l.id)} / ${list.length*3}</span></div>${cards(list)}<p class="source-note">Rujukan Part ${l.part} · Halaman bercetak ${l.pages}. Soalan digubah mengikut kemahiran pilihan dalam buku.</p><button class="secondary" data-action="home">← Semua dunia</button></main>`;window.scrollTo(0,0);}
 function shuffled(a){return a.map(x=>[Math.random(),x]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);}
 function freshQuestion(){run.attempts=0;run.hints=0;run.solved=false;run.shown=false;run.order=shuffled(BANK[run.id][run.index].options||[]);run.value=null;run.pieces=[];run.path=[];run.draft='';run.selected=null;selected=null;message=null;}
-function start(id){if(!BANK[id])throw Error('Misi tidak sah');activeLevel=MISSIONS.find(m=>m.id===id).level;screen='game';if(saved.runs[id]?.index<6){run=saved.runs[id];selected=run.selected??null;message=run.solved?{kind:'good',title:run.shown?'Mari fahami penyelesaiannya.':'Tepat! Laluan berjaya dibuka.',body:BANK[id][run.index].explanation}:null;}else{run={id,index:0,records:[]};freshQuestion();saved.runs[id]=run;}saved.run=run;persist();renderGame();window.scrollTo(0,0);}
+function start(id){if(!BANK[id])throw Error('Misi tidak sah');activeLevel=MISSIONS.find(m=>m.id===id).level;GameSound.play('mission',{level:activeLevel});screen='game';if(saved.runs[id]?.index<6){run=saved.runs[id];selected=run.selected??null;message=run.solved?{kind:'good',title:run.shown?'Mari fahami penyelesaiannya.':'Tepat! Laluan berjaya dibuka.',body:BANK[id][run.index].explanation}:null;}else{run={id,index:0,records:[]};freshQuestion();saved.runs[id]=run;}saved.run=run;persist();renderGame();window.scrollTo(0,0);}
 function renderGame(focus=false){const m=MISSIONS.find(m=>m.id===run.id),q=BANK[run.id][run.index];const phase=['Kenali','Kenali','Latih','Latih','Gunakan','Gunakan'][run.index];screen='game';el('app').innerHTML=header()+`<main class="shell game-shell" style="${theme(m)}">${warning()}<div class="game-top"><button class="icon-button" data-action="world" aria-label="Simpan dan kembali ke peta">←</button><div class="game-heading"><h1>${m.name}</h1><p>${m.skill}</p></div><span class="chip">Level ${m.level} · Misi ${levelMissions(m.level).indexOf(m)+1} / ${levelMissions(m.level).length}</span></div>${steps()}<div class="progress-track" role="progressbar" aria-label="Kemajuan misi" aria-valuemin="0" aria-valuemax="6" aria-valuenow="${run.index+(run.solved?1:0)}"><div class="progress-fill" style="width:${(run.index+(run.solved?1:0))/6*100}%"></div></div><div class="progress-caption"><span>Cabaran ${run.index+1} daripada 6</span><span>${phase} · ${run.index<2?'Bina asas':run.index<4?'Cuba sendiri':'Selesaikan masalah'}</span></div><div class="mission-story">${art(m.id)}<div><strong>Misi kamu hari ini</strong><p>${m.story}</p></div></div><section class="question-card"><div class="question-label"><span aria-hidden="true">✦</span> CABARAN ${run.index+1}<span>${phase}</span></div><h2 tabindex="-1" id="question-heading">${esc(q.prompt)}</h2><div class="equation"><span class="equation-spark" aria-hidden="true">✧</span>${esc(q.expression)}</div>${visualHTML(q.visual)}<form id="answer-form">${q.widget?widgetHTML(q):q.type==='choice'?`<div class="choices" role="group" aria-label="Pilihan jawapan">${run.order.map((v,i)=>`<button type="button" class="choice ${selected===i?'selected':''} ${run.solved&&String(v)===String(q.answer)?'correct':''}" data-choice="${i}" aria-pressed="${selected===i}" ${run.solved?'disabled':''}><span aria-hidden="true">${String.fromCharCode(65+i)}</span>${esc(label(v))}</button>`).join('')}</div>`:`<label class="input-label" for="answer">${q.decimal?'Jawapan dalam perpuluhan juta':'Jawapan dalam angka'}</label><div class="input-row"><input id="answer" name="answer" autocomplete="off" inputmode="decimal" placeholder="${q.decimal?'Contoh: 0.5':'Taip jawapan'}" ${run.solved?'disabled':''} value="${run.solved?esc(formatNumber(q.answer)):esc(run.draft||'')}">${q.unit?`<span class="unit">${q.unit}</span>`:''}</div>`}<div id="hint-area">${run.hints?`<div class="hint"><strong>Petunjuk ${run.hints}/2</strong><br>${esc(q.hints[run.hints-1])}</div>`:''}</div><div id="feedback-area" role="status" aria-live="polite">${feedbackHTML()}</div><div class="actions">${run.solved?`<button type="button" class="primary" data-action="next">${run.index===5?'Lihat hasil misi':'Cabaran seterusnya'} →</button>`:`<button type="button" class="text-button" data-action="hint" ${run.hints>=2?'disabled':''}>✧ Petunjuk (${run.hints}/2)</button><button class="primary" type="submit">Semak jawapan →</button>`}</div>${!run.solved&&run.attempts>=2?'<button type="button" class="text-button" data-action="solution">Lihat cara penyelesaian</button>':''}</form></section><p class="source-note">Rujukan: Matematik Tahun 6 SK · Part ${m.level} · hlm. ${m.pages}<br>Kamu boleh kembali ke peta pada bila-bila masa. Misi ini akan disimpan.</p></main>`;if(focus)el('question-heading').focus();}
 function feedbackHTML(){return message?`<div class="feedback ${message.kind}"><span class="feedback-icon" aria-hidden="true">${message.kind==='good'?'🌟':'🌱'}</span><div><strong>${esc(message.title)}</strong><p>${esc(message.body)}</p></div></div>`:'';}
-function completeQuestion(shown=false){const q=BANK[run.id][run.index];run.solved=true;run.shown=shown;if(shown)revealWidget(q);run.records[run.index]={independent:!shown&&run.attempts===1&&run.hints===0,shown,hints:run.hints,attempts:run.attempts};message={kind:'good',title:shown?'Mari fahami penyelesaiannya.':'Hebat! Jawapan kamu tepat.',body:q.explanation};run.draft='';saved.run=run;persist();renderGame();}
-function check(){if(!run||run.solved)return;const q=BANK[run.id][run.index];const value=q.type==='choice'?(selected===null?null:run.order[selected]):q.widget?run.value:el('answer').value;run.draft=q.type==='number'?value:'';if(value===null||value===undefined||String(value).trim()===''||(q.type==='number'&&!Number.isFinite(parseAnswer(value)))){message={kind:'retry',title:'Isi jawapan dahulu.',body:q.widget?'Gunakan alat interaktif dahulu, kemudian tekan Semak jawapan.':q.type==='choice'?'Ketik satu pilihan, kemudian tekan Semak jawapan.':'Masukkan angka sahaja. Gunakan titik atau koma bagi perpuluhan.'};el('feedback-area').innerHTML=feedbackHTML();return;}run.attempts++;if(answerMatches(q,value)){completeQuestion();}else{message={kind:'retry',title:'Belum tepat. Cuba sekali lagi.',body:run.attempts===1?'Semak nilai tempat atau langkah pengiraan kamu. Petunjuk tersedia jika diperlukan.':q.hints[Math.min(run.hints,1)]};saved.run=run;persist();renderGame();}}
-function hint(){if(!run||run.solved||run.hints>=2)return;if(el('answer'))run.draft=el('answer').value;run.hints++;persist();renderGame();}
-function next(){if(!run?.solved)return;run.index++;if(run.index===6){finish();return;}freshQuestion();run.draft='';saved.run=run;persist();renderGame(true);window.scrollTo(0,0);}
-function finish(){const independent=run.records.filter(r=>r.independent).length;const stars=independent>=5?3:independent>=3?2:1;const result={stars,independent,records:run.records};const old=saved.results[run.id];saved.results[run.id]={...result,stars:Math.max(stars,old?.stars||0),bestIndependent:Math.max(independent,old?.bestIndependent||0)};delete saved.runs[run.id];saved.run=Object.values(saved.runs)[0]||null;persist();screen='result';const m=MISSIONS.find(m=>m.id===run.id);const nextMission=MISSIONS[MISSIONS.indexOf(m)+1];el('app').innerHTML=header()+`<main class="shell game-shell"><section class="result"><div class="celebration" aria-hidden="true">${Array.from({length:12},(_,i)=>`<i style="--i:${i}"></i>`).join('')}${trophy()}</div><div class="eyebrow">Kawasan berjaya diterokai</div><div class="result-stars" aria-label="${stars} bintang">${'★'.repeat(stars)}${'☆'.repeat(3-stars)}</div><h1>${m.name} selesai!</h1><p class="muted">${independent>=5?'Kamu menyelesaikan hampir semua cabaran secara berdikari. Teruskan pengembaraan!':'Usaha kamu menghidupkan satu lagi kawasan. Ulang misi untuk mengukuhkan kemahiran.'}</p><div class="result-stats"><div class="stat"><strong>6 / 6</strong><span>Cabaran diselesaikan</span></div><div class="stat"><strong>${independent} / 6</strong><span>Betul tanpa bantuan¹</span></div></div><p class="muted">¹ Betul pada cubaan pertama tanpa petunjuk.</p><div class="actions"><button class="secondary" data-start="${m.id}">Ulang misi</button><button class="primary" ${nextMission?`data-start="${nextMission.id}"`:'data-action="progress"'}>${nextMission?'Misi seterusnya':'Lihat kemajuan'} →</button></div><div class="review-list"><h3>Jejak pembelajaran kamu</h3>${run.records.map((r,i)=>`<div class="review-item"><strong>${r.independent?'✓':'↻'} Cabaran ${i+1} · ${r.independent?'Berdikari':r.shown?'Belajar melalui penyelesaian':'Selesai dengan latihan'}</strong><span>${esc(BANK[run.id][i].expression)}<br>${esc(BANK[run.id][i].explanation)}</span></div>`).join('')}</div><button class="text-button" data-action="home">Kembali ke peta</button></section></main>`;window.scrollTo(0,0);}
+function completeQuestion(shown=false){GameSound.play(shown?'solution':'correct',{level:activeLevel});const q=BANK[run.id][run.index];run.solved=true;run.shown=shown;if(shown)revealWidget(q);run.records[run.index]={independent:!shown&&run.attempts===1&&run.hints===0,shown,hints:run.hints,attempts:run.attempts};message={kind:'good',title:shown?'Mari fahami penyelesaiannya.':'Hebat! Jawapan kamu tepat.',body:q.explanation};run.draft='';saved.run=run;persist();renderGame();}
+function check(){if(!run||run.solved)return;const q=BANK[run.id][run.index];const value=q.type==='choice'?(selected===null?null:run.order[selected]):q.widget?run.value:el('answer').value;run.draft=q.type==='number'?value:'';if(value===null||value===undefined||String(value).trim()===''||(q.type==='number'&&!Number.isFinite(parseAnswer(value)))){message={kind:'retry',title:'Isi jawapan dahulu.',body:q.widget?'Gunakan alat interaktif dahulu, kemudian tekan Semak jawapan.':q.type==='choice'?'Ketik satu pilihan, kemudian tekan Semak jawapan.':'Masukkan angka sahaja. Gunakan titik atau koma bagi perpuluhan.'};GameSound.play('empty');el('feedback-area').innerHTML=feedbackHTML();return;}run.attempts++;if(answerMatches(q,value)){completeQuestion();}else{GameSound.play('retry',{level:activeLevel});message={kind:'retry',title:'Belum tepat. Cuba sekali lagi.',body:run.attempts===1?'Semak nilai tempat atau langkah pengiraan kamu. Petunjuk tersedia jika diperlukan.':q.hints[Math.min(run.hints,1)]};saved.run=run;persist();renderGame();}}
+function hint(){if(!run||run.solved||run.hints>=2)return;if(el('answer'))run.draft=el('answer').value;run.hints++;GameSound.play('hint',{level:activeLevel});persist();renderGame();}
+function next(){if(!run?.solved)return;run.index++;if(run.index===6){finish();return;}GameSound.play('next',{level:activeLevel});freshQuestion();run.draft='';saved.run=run;persist();renderGame(true);window.scrollTo(0,0);}
+function finish(){const independent=run.records.filter(r=>r.independent).length;const stars=independent>=5?3:independent>=3?2:1;GameSound.play('finish',{level:activeLevel,stars});const result={stars,independent,records:run.records};const old=saved.results[run.id];saved.results[run.id]={...result,stars:Math.max(stars,old?.stars||0),bestIndependent:Math.max(independent,old?.bestIndependent||0)};delete saved.runs[run.id];saved.run=Object.values(saved.runs)[0]||null;persist();screen='result';const m=MISSIONS.find(m=>m.id===run.id);const nextMission=MISSIONS[MISSIONS.indexOf(m)+1];el('app').innerHTML=header()+`<main class="shell game-shell"><section class="result"><div class="celebration" aria-hidden="true">${Array.from({length:12},(_,i)=>`<i style="--i:${i}"></i>`).join('')}${trophy()}</div><div class="eyebrow">Kawasan berjaya diterokai</div><div class="result-stars" aria-label="${stars} bintang">${'★'.repeat(stars)}${'☆'.repeat(3-stars)}</div><h1>${m.name} selesai!</h1><p class="muted">${independent>=5?'Kamu menyelesaikan hampir semua cabaran secara berdikari. Teruskan pengembaraan!':'Usaha kamu menghidupkan satu lagi kawasan. Ulang misi untuk mengukuhkan kemahiran.'}</p><div class="result-stats"><div class="stat"><strong>6 / 6</strong><span>Cabaran diselesaikan</span></div><div class="stat"><strong>${independent} / 6</strong><span>Betul tanpa bantuan¹</span></div></div><p class="muted">¹ Betul pada cubaan pertama tanpa petunjuk.</p><div class="actions"><button class="secondary" data-start="${m.id}">Ulang misi</button><button class="primary" ${nextMission?`data-start="${nextMission.id}"`:'data-action="progress"'}>${nextMission?'Misi seterusnya':'Lihat kemajuan'} →</button></div><div class="review-list"><h3>Jejak pembelajaran kamu</h3>${run.records.map((r,i)=>`<div class="review-item"><strong>${r.independent?'✓':'↻'} Cabaran ${i+1} · ${r.independent?'Berdikari':r.shown?'Belajar melalui penyelesaian':'Selesai dengan latihan'}</strong><span>${esc(BANK[run.id][i].expression)}<br>${esc(BANK[run.id][i].explanation)}</span></div>`).join('')}</div><button class="text-button" data-action="home">Kembali ke peta</button></section></main>`;window.scrollTo(0,0);}
 function progress(){screen='progress';run=null;const list=levelMissions(activeLevel);el('app').innerHTML=header()+`<main class="shell"><section class="progress-hero"><div><div class="eyebrow">KOLEKSI PENCAPAIAN</div><h1>Hebatnya pengembaraan kamu!</h1><p>Setiap bintang ada ceritanya. Terus cuba, terus belajar!</p></div>${trophy()}</section><div class="badge-row"><div class="badge"><span aria-hidden="true">🏝️</span><div><strong>${completed()} <small>/ ${MISSIONS.length}</small></strong>Misi diterokai</div></div><div class="badge"><span aria-hidden="true">⭐</span><div><strong>${totalStars()} <small>/ ${MAX_STARS}</small></strong>Bintang dikumpul</div></div><div class="badge"><span aria-hidden="true">🚀</span><div><strong>${completed()*6}</strong>Cabaran diselesaikan</div></div></div>${levelTabs()}<section class="sticker-album"><div class="section-title"><div><div class="eyebrow">ALBUM LEVEL ${activeLevel}</div><h2>${levelDone(activeLevel)===list.length?'Koleksi level ini lengkap!':'Kumpul lencana '+levelInfo(activeLevel).name}</h2></div><span>${levelDone(activeLevel)} / ${list.length}</span></div><div class="sticker-grid">${list.map((m,i)=>`<div class="sticker ${saved.results[m.id]?'collected':'uncollected'}" style="${theme(m)}">${art(m.id)}<strong>${m.badge||['Penjaga Kod','Pakar Pola','Ahli Juta','Wira Operasi','Detektif Anu','Penemu Faktor'][i]}</strong><span>${saved.results[m.id]?'✓ Sudah dikumpul':'Tamatkan misi '+(i+1)}</span></div>`).join('')}</div></section><div class="section-title"><h2>Teruskan berlatih</h2><span>Level ${activeLevel}</span></div>${cards(list)}<p class="source-note">Bintang ialah pencapaian permainan, bukan penetapan Tahap Penguasaan (TP) PBD.<br>Kemajuan ini disimpan pada pelayar dan peranti ini sahaja.</p><button class="secondary" data-action="home">← Semua dunia</button></main>`;}
-el('app').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;if(widgetClick(b))return;if(b.dataset.level){activeLevel=Number(b.dataset.level);if(screen==='progress')progress();else world(activeLevel);return;}if(b.dataset.start){start(b.dataset.start);return;}if(b.dataset.choice!==undefined){selected=Number(b.dataset.choice);run.selected=selected;persist();document.querySelectorAll('.choice').forEach((c,i)=>{c.classList.toggle('selected',i===selected);c.setAttribute('aria-pressed',i===selected);});return;}switch(b.dataset.action){case'theme':toggleTheme();break;case'world':world();break;case'home':home();window.scrollTo(0,0);break;case'progress':progress();window.scrollTo(0,0);break;case'help':el('reference').showModal();break;case'hint':hint();break;case'next':next();break;case'solution':if(run?.attempts>=2)completeQuestion(true);break;}});
+el('app').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;if(widgetClick(b))return;if(b.dataset.level){activeLevel=Number(b.dataset.level);GameSound.play('level',{level:activeLevel});if(screen==='progress')progress();else world(activeLevel);return;}if(b.dataset.start){start(b.dataset.start);return;}if(b.dataset.choice!==undefined){if(selected!==Number(b.dataset.choice))GameSound.play('select',{level:activeLevel});selected=Number(b.dataset.choice);run.selected=selected;persist();document.querySelectorAll('.choice').forEach((c,i)=>{c.classList.toggle('selected',i===selected);c.setAttribute('aria-pressed',i===selected);});return;}switch(b.dataset.action){case'sound':toggleSound();break;case'theme':GameSound.play('tap');toggleTheme();break;case'world':GameSound.play('tap');world();break;case'home':GameSound.play('tap');home();window.scrollTo(0,0);break;case'progress':GameSound.play('tap');progress();window.scrollTo(0,0);break;case'help':GameSound.play('hint');el('reference').showModal();break;case'hint':hint();break;case'next':next();break;case'solution':if(run?.attempts>=2)completeQuestion(true);break;}});
 el('app').addEventListener('submit',e=>{e.preventDefault();check();});
 el('app').addEventListener('input',e=>{if(widgetInput(e.target))return;if(e.target.id==='answer'&&run){run.draft=e.target.value;persist();}});
 el('app').addEventListener('change',e=>{if(e.target.dataset.clock)widgetInput(e.target);});
 syncThemeColor();
 el('guide-buddy').innerHTML=buddy();
-el('close-reference').onclick=()=>el('reference').close();
+el('close-reference').onclick=()=>{GameSound.play('tap');el('reference').close();};
 el('reference-list').innerHTML=MISSIONS.map(m=>`<p><strong>Level ${m.level} · ${m.name}</strong> — ${m.skill}<br>Halaman ${m.pages}</p>`).join('');
 home();
 if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool({name:'read_game_progress',description:'Read device-local mission progress and the current screen without revealing question answers.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true},execute:()=>({screen,completed:completed(),stars:totalStars(),missions:MISSIONS.map(m=>({id:m.id,name:m.name,stars:saved.results[m.id]?.stars||0}))})},{signal:lifecycle.signal})).catch(()=>{});Promise.resolve(document.modelContext.registerTool({name:'start_math_mission',description:'Open or resume a mathematics mission. Does not answer questions or complete a mission.',inputSchema:{type:'object',properties:{missionId:{type:'string',enum:MISSIONS.map(m=>m.id)}},required:['missionId'],additionalProperties:false},annotations:{readOnlyHint:false},execute:input=>{if(!input||typeof input.missionId!=='string'||!BANK[input.missionId])throw Error('Misi tidak sah');start(input.missionId);return{screen,missionId:run.id,questionNumber:run.index+1};}},{signal:lifecycle.signal})).catch(()=>{});}catch{}window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true});}
